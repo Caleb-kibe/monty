@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	FILE *file;
 	size_t len;

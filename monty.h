@@ -7,8 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void get_opcode(char *opcode, unsigned int line_number, stack_t **stack, int argument);
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -39,6 +37,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void get_opcode(char *opcode, unsigned int line_number, stack_t **stack, int argument);
 void push_opcode(stack_t **stack, unsigned int line_number);
 void pall_opcode(stack_t **stack, unsigned int line_number);
 
