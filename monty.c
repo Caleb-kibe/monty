@@ -4,14 +4,17 @@ int main(int argc, char *argv[])
 {
 	FILE *file;
 	size_t len;
+	unsigned int line_number = 0;
 	char *line, *opcode, argument;
 	stack_t *stack;
 
-	if (argv != 2)
+	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
+	
+	if (argv[1] == 
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 	{
@@ -28,4 +31,9 @@ int main(int argc, char *argv[])
 	{
 		get_opcode(opcode, line_number, &stack, argument);
 	}
+	free(line);
+	fclose(file);
+	free(stack);
+
+	return (0);
 }
