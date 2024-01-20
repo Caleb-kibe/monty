@@ -12,7 +12,7 @@ void get_opcode(char *opcode, unsigned int line_number, stack_t **stack, int arg
 {
 	int i = 0;
 
-	instruction_t intructions[] = {
+	instruction_t instructions[] = {
 		{"push", push_opcode},
 		{"pall", pall_opcode},
 		{NULL, NULL}
