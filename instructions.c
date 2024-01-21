@@ -20,7 +20,7 @@ void get_opcode(char *opcode, unsigned int line_number, stack_t **stack, char *a
 
 	if (strcmp(opcode, "push") == 0)
 	{
-		push_opcode(stack, line_number, argument);
+		push_opcode(stack, *argument);
 		return;
 	}
 
@@ -32,6 +32,4 @@ void get_opcode(char *opcode, unsigned int line_number, stack_t **stack, char *a
 			return;
 		}
 	}
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-	exit(EXIT_FAILURE);
 }
