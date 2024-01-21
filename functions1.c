@@ -56,7 +56,7 @@ void push_opcode(stack_t **stack, unsigned int line_number)
  */
 void pall_opcode(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp;
+	stack_t *temp = *stack;
 	char *argument = strtok(NULL, "\n");
 
 	if (argument == NULL)
