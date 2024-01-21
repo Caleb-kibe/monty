@@ -1,11 +1,18 @@
 #include "monty.h"
 
+/**
+ * main - main function
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0 (success)
+ */
 int main(int argc, char *argv[])
 {
 	FILE *file;
-	size_t len;
+	size_t len = 0;
 	unsigned int line_number = 0;
-	char *line, *opcode, argument;
+	char *line = NULL;
+	char *opcode, *argument;
 	stack_t *stack;
 
 	if (argc != 2)
