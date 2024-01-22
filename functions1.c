@@ -9,7 +9,6 @@ void push_opcode(stack_t **stack, unsigned int line_number)
 {
 	stack_t *newnode, *temp = NULL;
 	stack_t *top = *stack;
-	unsigned int data = 0;
 	char *argument = strtok(NULL, "\n");
 	int n = atoi(argument);
 
