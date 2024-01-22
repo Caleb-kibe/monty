@@ -31,15 +31,15 @@ int main(int argc, char *argv[])
 	{
 		line_number++;
 		opcode = strtok(line, "\n");
-		argument = strtok(NULL, "\n");
-	}
-	if (opcode && opcode[0] != '#')
-	{
-		get_opcode(opcode, line_number, &stack, argument);
+		if (opcode != NULL)
+		{
+			argument = strtok(NULL, "\n");
+			get_opcode(opcode, line_number, &stack, argument);
+		}
 	}
 	free(line);
 	fclose(file);
-	free(stack);
+	free_stack(stack);
 
 	return (0);
 }
