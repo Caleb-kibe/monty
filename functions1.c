@@ -15,12 +15,12 @@ void push_opcode(stack_t **stack, unsigned int line_number)
 
 	if (argument == NULL)
 	{
-		fprintf(stderr, "L%u: usage:push integer", line_number);
+		fprintf(stderr, "L%u: usage:push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (n == 0 && *argument != '0')
 	{
-		fprintf(stderr, "L%u: usage: push integer", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	newnode = (stack_t *)malloc(sizeof(stack_t));
@@ -31,7 +31,7 @@ void push_opcode(stack_t **stack, unsigned int line_number)
 	}
 	newnode->prev = 0;
 	newnode->next = 0;
-	newnode->n = data;
+	newnode->n = n;
 
 	if (top == 0)
 	{
@@ -45,6 +45,7 @@ void push_opcode(stack_t **stack, unsigned int line_number)
 		temp = newnode;
 	}
 	top = newnode;
+	free(newnode);
 }
 
 /**
@@ -61,7 +62,7 @@ void pall_opcode(stack_t **stack, unsigned int line_number)
 
 	if (argument == NULL)
 	{
-		fprintf(stderr, "L%u: unknown instruction opcode", line_number);
+		fprintf(stderr, "L%u: unknown instruction opcode\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
